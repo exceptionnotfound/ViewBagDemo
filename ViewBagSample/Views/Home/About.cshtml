@@ -1,0 +1,27 @@
+﻿@model ViewBagSample.ViewModels.Home.HomeAboutVM
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>@Model.PageTitle</h3>
+
+<p>
+    @Model.PageDescription
+</p>
+
+<span>Created on @Model.PageCreateDate.ToShortDateString()</span>
+
+Current user:
+<div>
+    <dl>
+        <dt>Name:</dt>
+        <dd>@Model.CurrentUser.Name</dd>
+        <dt>ID:</dt>
+        <dd>@Model.CurrentUser.ID</dd>
+        <dt>Logon Date:</dt>
+        <dd>@Model.CurrentUser.LogonDate.ToShortDateString()</dd>
+    </dl>
+</div>
+
+@Html.ActionLink("Go to Index Page", "Index")
